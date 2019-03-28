@@ -1,7 +1,6 @@
 # 作業ブランチ作成からプッシュまで
 (親ブランチ: develop, 作業ブランチ: feature/~~~)
 
-
 ・ローカルリポジトリ作成
 
     $ cd your directory
