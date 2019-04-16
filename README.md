@@ -60,3 +60,13 @@
 ・直前のコミットの上書き(commit messageの変更の時とかに使う)
 
     $ git commit --amend -m "some comment"
+
+# 忘れないけどメモとして残しとくgit command
+
+・変更したファイルを一時保存領域へ退避
+
+    $ git stash
+
+・一時保存領域へ退避したファイルを元に戻す
+
+    $ git stash pop
