@@ -17,8 +17,10 @@
 
 <最新の親ブランチ取得(リモートにdevelopブランチがあること前提)>
 
-    $ git checkout develop
-    $ git pull origin develop
+    - リモートにdevelopブランチがある場合、以下のコマンドを実行するとリモートのdevelopブランチがローカルにチェックアウトされる
+      $ git checkout develop
+    - 差異があると困るので念の為リモートのdevelopブランチの情報をローカルのdevelopへ引っ張ってくる
+      $ git pull origin develop
 
 <作業ブランチの作成と移動>
 
