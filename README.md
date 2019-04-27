@@ -1,4 +1,4 @@
-# 作業用ローカルブランチ作成からプッシュまで
+# 作業ブランチ作成からプッシュまで
 (親ブランチ: develop, 作業ブランチ: feature/~~~)
 
 <ローカルリポジトリの作成>
@@ -17,63 +17,69 @@
 
 <最新の親ブランチ取得(リモートリポジトリにdevelopブランチがあること前提)>
 
-    - リモートリポジトリにdevelopブランチがある場合、以下のコマンドを実行するとリモートリポジトリのdevelopブランチがローカルリポジトリに引っ張ってこれる
+    - リモートリポジトリにdevelopブランチがある場合、以下のコマンドを実行すると
+      リモートリポジトリのdevelopブランチがローカルリポジトリに引っ張ってこれる
 
       $ git checkout develop
     
-    - リモートリポジトリとローカルリポジトリに差異があると困るので、念の為リモートリポジトリのdevelopブランチの情報をローカルリポジトリのdevelopへ引っ張ってくる
+    - リモートリポジトリとローカルリポジトリに差異があると困るので、
+      念の為リモートリポジトリのdevelopブランチの情報をローカルリポジトリのdevelopへ引っ張ってくる
     
       $ git pull origin develop
 
 <作業ブランチの作成と移動>
 
-    - 
+    - 親ブランチdevelopから作業ブランチfeature/~~~を作成
 
       $ git branch feature/~~~~ develop
     
-    - 
+    - 親ブランチdevelopから作業ブランチfeature/~~~へ移動
     
       $ git checkout feature/~~~~
 
 <作業ブランチのコミット>
 
-    - 
+    - ファイルの変更状況を確認
     
       $ git status
 
-    - 
+    - 誤って変更したファイルがある場合、以下のコマンドで取り消しを実行
+      (変更を全て破棄する場合は git checkout -- .)
 
-      $ git checkout -- [file that you don't want to add]
+      $ git checkout -- [変更を破棄したいファイル名]
 
-    -
+    - 変更したファイルをステージングへ追加
 
       $ git add --all
 
-    -
+    - コミットメッセージ(どんな変更を行ったか)を記載し、コミットを実行
 
-      $ git commit -m "commit message"
+      $ git commit -m "変更した内容をここへ記載"
 
 <作業ブランチに親ブランチを取り込む(作業ブランチで作業している間に、developが更新されている可能性があるため)>
 
-    -
+    - 作業ブランチfature/~~~から親ブランチdevelopへ移動
 
       $ git checkout develop
     
-    -
+    - リモートリポジトリからローカルリポジトリへ、最新のdevelopの情報を引っ張ってくる
     
       $ git pull origin develop
     
-    -
+    - 親ブランチdevelopから作業ブランチfeature/~~~へ移動
     
       $ git checkout feature/~~~~
     
-    -
+    - 作業ブランチfeature/~~~に親ブランチdevelopの内容を取り込む
+      (コンフリクトが起きた場合は別途対応)
     
       $ git merge --no-ff develop
 
 <作業ブランチのプッシュ>
 
-    -
+    - 作業ブランチfeature/~~~はローカルリポジトリにしか存在しないため、
+      以下のコマンドでローカルリポジトリへ反映させる
+    
       $ git push origin feature/~~~~
 
 # よく使うけど忘れるgit command
